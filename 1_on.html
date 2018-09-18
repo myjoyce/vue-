@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app" class="container">
+    <p>当前购买数量：{{count}}</p>
+    <button v-on:click="f1()">多买一件</button>
+    <button v-on:click="f2()">多买一件</button>
+    <button v-on:click="f3()">多买一件</button>
+  </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      count: 3,
+    },
+
+    methods: {
+      f1: function () {
+        console.log("匿名函数中的this" + this);
+      },
+      f2: () => {
+        console.log("箭头函数中的this" + this);
+      },
+      f3() {
+        console.log("es6中的this" + this);
+      }
+    }
+  })
+</script>
+
+</html>

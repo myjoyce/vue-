@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <select v-model="styleObj.color">
+      <option value="#f00">文字变成红色</option>
+      <option value="#0f0">文字变成绿色</option>
+      <option value="#00f">文字变成蓝色</option>
+    </select>
+    <select v-model="styleObj.background">
+      <option value="#f00">背景变成红色</option>
+      <option value="#0f0">背景变成绿色</option>
+      <option value="#00f">背景变成蓝色</option>
+    </select>
+    <hr>
+    <!-- <p :style="'color:'+textcolor+';background:'+bgcolor">健康萨芬</p>
+    <p :style="{color:textcolor,background:bgcolor}">z兴冲冲</p> -->
+    <p :style="styleObj">得瑟得瑟</p>
+  </div>
+
+</body>
+<script src="js/vue.js"></script>
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      styleObj: {
+        color: '#f00',
+        background: "#0f0"
+      }
+
+    }
+  })
+</script>
+
+</html>

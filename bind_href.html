@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <table border="1">
+      <tr v-for="val in productList">
+        <td>{{val.pid}}</td>
+        <td>{{val.pname}}</td>
+        <td>
+          <a :href="'delete.php?pid='+val.pid">删除</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      productList: [
+        { pid: '1001', pname: 'aaa' },
+        {
+          pid: '1002', pname: 'bbb'
+        },
+        {
+          pid: '1003', pname: 'ccc'
+        }
+      ]
+    }
+  });
+</script>
+
+</html>

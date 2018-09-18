@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <button v-on:click="desc()" :disabled="isDisabled">-</button>
+    <input type="text" :value="count">
+    <button v-on:click="inc()">+</button>
+  </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+  var vm = new Vue({
+    el: "#app",
+    data: {
+      count: 3,
+      isDisabled: false
+    },
+    methods: {
+      desc: function () {
+        if (this.count <= 0) {
+          isDisabled = true
+        } else {
+          this.count--;
+        }
+      },
+      inc: function () {
+        this.count++;
+        if (this.isDisabled === true) {
+          isDisabled = false;
+        }
+      }
+    }
+  })
+</script>
+
+</html>

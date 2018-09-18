@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    密码：
+    <input type="password" v-model="pwd">
+    <br> 个人签名：
+    <textarea v-model="textarea"></textarea>
+    <br> 所在城市：
+    <select v-model="addr">
+      <option value="hh">杭州</option>
+      <option value="ss">苏州</option>
+      <option value="dd">德州</option>
+    </select>
+    用户性别：
+    <input type="radio" v-model="gender" name="gender" value="male">男
+    <input type="radio" v-model="gender" name="gender" value="female">女
+    <br> 兴趣爱好:
+    <input type="checkbox" v-model="hobby" name="hobby" value="cf">吃饭
+    <input type="checkbox" v-model="hobby" name="hobby" value="sj">睡觉
+    <input type="checkbox" v-model="hobby" name="hobby" value="ddd">打豆豆
+    <hr>
+    <p>密码{{pwd}}</p>
+    <p>个人签名{{textarea}}</p>
+    <p>所在城市{{addr}}</p>
+    <p>性别是{{gender}}</p>
+    <p>兴趣是{{hobby}}</p>
+  </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+  var vm = new Vue({
+    el: "#app",
+    data: {
+      pwd: '',
+      textarea: '',
+      addr: 'hh',
+      gender: 'male',
+      hobby: []
+    }
+  })
+</script>
+
+</html>
